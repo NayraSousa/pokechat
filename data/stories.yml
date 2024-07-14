@@ -1,0 +1,25 @@
+version: "3.1"
+
+stories:
+
+- story: introducao
+  steps: 
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: humor
+  - action: action_resposta_humor_pergunta_pokemon
+
+- story: escolha do pokemon 
+  steps:
+  - intent: escolha_pokemon
+  - action: action_define_pokemon_exibe_sumario
+
+- story: escolha do sumário
+  steps:
+  - intent: escolha_opcao_sumario
+  - action: action_generica
+
+- story: finalizacao
+  steps:
+  - intent: agradecimento
+  - action: utter_agradecimento

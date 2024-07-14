@@ -1,0 +1,53 @@
+version: "3.1"
+
+nlu:
+
+- intent: saudacao
+  examples: |
+    - oi
+    - olá
+    - eai
+    - bom dia
+    - boa tarde
+    - boa noite
+    - ei
+
+- intent: humor
+  examples: |
+    - estou bem
+    - estou legal
+    - ótimo
+    - perfeito
+    - bem
+    - estou mal
+    - pessimo
+    - triste
+    - horrivel
+
+- intent: escolha_pokemon
+  examples: |
+    - o meu preferido é o [bulbasaur](pokemon_slot)
+    - eu prefiro o [charmander](pokemon_slot)
+    - meu pokemon favorito é o [squirtle](pokemon_slot)
+    - eu gosto do [clefairy](pokemon_slot)
+    - meu predileto é o [pikachu](pokemon_slot)
+    - agora eu quero ver o [charizard](pokemon_slot)
+    - eu também gosto do [pidgey](pokemon_slot)
+    - me mostre o [rattata](pokemon_slot)
+
+- intent: escolha_opcao_sumario
+  examples: |
+    - diga as [estatísticas](summary_choice_slot)
+    - quais os [tipos](summary_choice_slot)?
+    - me mostre a [imagem](summary_choice_slot)
+    - liste para mim as [habilidades](summary_choice_slot)
+    - me apresente os [movimentos](summary_choice_slot)
+
+- intent: agradecimento
+  examples: |
+    - muito obrigada
+    - obrigado
+    - thanks
+    - valeu
+    - raleu
+    - obg

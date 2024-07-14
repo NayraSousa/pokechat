@@ -1,0 +1,46 @@
+version: "3.1"
+
+intents:
+  - saudacao
+  - humor
+  - escolha_pokemon
+  - escolha_opcao_sumario
+  - agradecimento
+
+actions:
+  - pergunta_humor
+  - action_resposta_humor_pergunta_pokemon
+  - action_define_pokemon_exibe_sumario
+  - action_generica
+
+entities:
+  - pokemon_slot
+  - summary_choice_slot
+
+slots:
+  summary_choice_slot:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: summary_choice_slot
+      action: action_generica
+
+  pokemon_slot:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: pokemon_slot
+
+responses:
+
+  utter_saudacao:
+  - text: "Olá! Como vai?"
+  - text: "Opa! Como você está?"
+
+  utter_agradecimento:
+  - text: "De nada! Espero ter ajudado"
+  - text: "Que bom que eu pude ajudar!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

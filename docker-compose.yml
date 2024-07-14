@@ -1,0 +1,26 @@
+version: '3'
+services:
+  rasa:
+    image: rasa/rasa:3.6.20
+    build:
+      context: .
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "5005:5005"
+    command: python -m rasa run --enable-api --endpoints endpoints.yml --credentials credentials.yml --debug
+    networks:
+      - rasa-networks
+  action:
+    image: action_server
+    build:
+      context: ./actions
+    volumes:
+      - ./actions:/app
+    ports:
+      - "5055:5055"
+    command : python -m rasa run actions
+    networks:
+      - rasa-networks
+networks:
+  rasa-networks:
